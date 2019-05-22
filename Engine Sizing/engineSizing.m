@@ -11,11 +11,22 @@ clear();
 
 close all;
 
+%% Adding to path:
+addpath functions;
+
 %% Params:
 T2W = 0.815657;
-Wto = 30227;
+Wto = 30227 * 9.81;
 Tsl = T2W * Wto;
+Ne = 2;
+%% Design Conditions:
+m0 = 1.3 * 134 * Ne; %kg/s from Mikey
+M0 = 1.9;
+h0 = 15240;
+% (Optimised for supercruise at cruise altitude)
 
 %% Critical Stages of Flight:
 
-load(getCritStages(Tsl));
+load(getCritStages(Tsl, Wto));
+
+Amax = getMaxInletArea(m0, 3, 18400);

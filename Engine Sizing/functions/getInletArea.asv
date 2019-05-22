@@ -1,8 +1,14 @@
-function [A1] = getInletArea()
+function [A1] = getInletArea(m, M, h, cms)
 %GETINLETAREA Returns the inlet area required for an aircraft engine.
 %   Based on Mattingley, Section 6.2.4.
-    
+%   %INPUTS:    - m - mass flow rate [kg/s]
+%               - M - Mach number []
+%               - h - altitude [m]
+%               - cms - critical mission stages (matlab structure)
+%
 %                       ** Begin Function **
+
+
 
 %% Estimate subsonic area bound:
 % Assume 4% safety margin at M1 = 0.8 to allow for boundary layer

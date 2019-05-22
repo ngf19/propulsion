@@ -1,6 +1,6 @@
-function Treq = getThrustRequired(Tsl, alpha)
+function Treq = getThrustRequired(T2W, W, alpha)
 %GETTHRUSTCRI Gives required thrust at altitude using thrust at sea level.
 
-Treq = Tsl * alpha;
+Treq = T2W * W * alpha;
 end
 
